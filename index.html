@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random color generator</title>
+    <title>Random color Changer</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .changeBtn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .changeBtn:hover {
+            background-color: rgb(235, 227, 227);
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
     <h1>
-        Random color generator
+        Random color Changer
     </h1>
+    <button class="changeBtn">Change the color!</button>
 </body>
+
+<script>
+    let changeBtn = document.querySelector(".changeBtn")
+
+    changeBtn.addEventListener("click", () => {
+        let randomR = Math.ceil(Math.random() * 255)
+        let randomG = Math.ceil(Math.random() * 255)
+        let randomB = Math.ceil(Math.random() * 255)
+
+        document.body.style.backgroundColor = `rgb(${randomR}, ${randomB}, ${randomR})`
+    })
+</script>
+
 </html>
